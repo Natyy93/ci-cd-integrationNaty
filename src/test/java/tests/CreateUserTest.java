@@ -17,7 +17,7 @@ public class CreateUserTest {
     private static final String BASE_PATH = "/v2";
     private static final String CREATE_USER_ENDPOINT = "/user";
 
-    @Feature("User API")
+
     @Story("Create user")
     @Description("Verify user can be created successfully")
     @Test(description = "Create a user - 200 Success")
@@ -40,6 +40,7 @@ public class CreateUserTest {
                 .post(CREATE_USER_ENDPOINT)
                 .then()
                 .assertThat()
-                .statusCode(HttpStatus.SC_OK);
+                ..statusCode(HttpStatus.SC_BAD_REQUEST)
+;
     }
 }
